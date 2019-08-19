@@ -49,7 +49,7 @@ public class UserLoginServiceImplTest {
 	@Test
 	public void testUserLogin() {
 		LoginDto loginDto = new LoginDto();
-		loginDto.setUserName("raja");
+		loginDto.setEmail("raja");
 		loginDto.setPassword("raja@123");
 		
 		UserDetails user = new UserDetails();
@@ -106,7 +106,7 @@ public class UserLoginServiceImplTest {
 	@Test(expected = EnterValidCredentials.class)
 	public void testUserLoginSecondNegitiveCase() {
 		LoginDto loginDto = new LoginDto();
-		loginDto.setUserName("raja");
+		loginDto.setEmail("raja");
 		loginDto.setPassword("rajaaaa@123");
 		UserDetails user = new UserDetails();
 		user.setUserId(1L);
@@ -150,7 +150,7 @@ public class UserLoginServiceImplTest {
 	@Test(expected = UserNotFound.class)
 	public void testUserLoginNegitiveCase() {
 		LoginDto loginDto = new LoginDto();
-		loginDto.setUserName("raja");
+		loginDto.setEmail("raja");
 		loginDto.setPassword("raja@123");
 		UserDetails user = new UserDetails();
 		user.setUserId(1L);

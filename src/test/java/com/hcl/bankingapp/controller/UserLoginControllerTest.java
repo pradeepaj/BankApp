@@ -35,7 +35,7 @@ public class UserLoginControllerTest {
 
 		mockMvc = MockMvcBuilders.standaloneSetup(userLoginController).build();
 		loginDto=new LoginDto();
-		loginDto.setUserName("varun");
+		loginDto.setEmail("varun");
 		loginDto.setPassword("varun@123");
 
 	}

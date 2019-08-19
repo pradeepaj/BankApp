@@ -44,7 +44,7 @@ public class BankTransactionControllerTest {
 
 		mockMvc = MockMvcBuilders.standaloneSetup(bankTransactionController).build();
 		loginDto = new LoginDto();
-		loginDto.setUserName("varun");
+		loginDto.setEmail("varun");
 		loginDto.setPassword("varun@123");
 
 	}

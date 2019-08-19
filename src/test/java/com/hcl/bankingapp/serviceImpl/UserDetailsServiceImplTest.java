@@ -41,7 +41,7 @@ public class UserDetailsServiceImplTest {
 		
 
 		LoginDto loginDto = new LoginDto();
-		loginDto.setUserName("raja");
+		loginDto.setEmail("raja");
 		loginDto.setPassword("raja@123");
 		UserDetails user = new UserDetails();
 		user.setUserId(1L);
