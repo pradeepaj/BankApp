@@ -48,7 +48,9 @@ public class UserDetails implements Serializable {
 	public void setMobile(Long mobile) {
 		this.mobile = mobile;
 	}
-	
+	public UserDetails() {
+		
+	}
 	
 	
 	

@@ -1,38 +1,39 @@
 package com.hcl.bankingapp.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Authentication {
 
 	@Id
-	private Long otpGen;
-	private String payeeId;
-	private int otp;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int otpGen;
+	
+	private Integer otp;
 
-	public Long getOtpGen() {
+	
+
+
+	public int getOtpGen() {
 		return otpGen;
 	}
 
-	public void setOtpGen(Long otpGen) {
+	public void setOtpGen(int otpGen) {
 		this.otpGen = otpGen;
 	}
 
-	public String getPayeeId() {
-		return payeeId;
-	}
-
-	public void setPayeeId(String payeeId) {
-		this.payeeId = payeeId;
-	}
-
-	public int getOtp() {
+	public Integer getOtp() {
 		return otp;
 	}
 
-	public void setOtp(int otp) {
+	public void setOtp(Integer otp) {
 		this.otp = otp;
 	}
+
+	
+	
 
 }

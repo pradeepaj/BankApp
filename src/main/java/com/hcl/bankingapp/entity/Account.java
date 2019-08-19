@@ -17,6 +17,9 @@ public class Account {
 	private Double balance;
 	private String ifsc;
 	private String branchName;
+	
+	
+	
 
 	public String getIfsc() {
 		return ifsc;
@@ -37,7 +40,7 @@ public class Account {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "userId")
 
-	UserDetails userDetails;
+	private UserDetails userDetails;
 
 	public Long getAccountId() {
 		return accountId;
@@ -69,6 +72,9 @@ public class Account {
 
 	public void setUserDetails(UserDetails userDetails) {
 		this.userDetails = userDetails;
+	}
+	public Account() {
+		
 	}
 
 }

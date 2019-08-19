@@ -64,5 +64,8 @@ public class Transactions {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public Transactions() {
+		// TODO Auto-generated constructor stub
+	}
 
 }

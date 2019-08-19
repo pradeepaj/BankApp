@@ -86,7 +86,7 @@ public class UserLoginServiceImplTest {
 		List<UserDetails> UserDetailsList=new ArrayList<>();
 		UserDetailsList.add(user);
  
-		Mockito.when(userDetailsRepository.findByUserName(user.getEmail())).thenReturn(user);
+		Mockito.when(userDetailsRepository.findByEmail(user.getEmail())).thenReturn(user);
 
 		Mockito.when(accountRepository.findByUserDetails(user)).thenReturn(accountList);
 
@@ -95,7 +95,7 @@ public class UserLoginServiceImplTest {
 		
 		ResponseDto responseDto=new ResponseDto();
 		responseDto.setAccNo(1234L);
-		responseDto.setUserName(user.getEmail());
+		responseDto.setEmail(user.getEmail());
 		responseDto.setMessage("User registration done successfully");
 		 
 
@@ -136,12 +136,12 @@ public class UserLoginServiceImplTest {
 		transaction1.setDate(LocalDate.now());
 		transactions.add(transaction1);
 
-		Mockito.when(userDetailsRepository.findByUserName("raja")).thenReturn(user);
+		Mockito.when(userDetailsRepository.findByEmail("raja")).thenReturn(user);
 
 
 		ResponseDto responseDto=new ResponseDto();
 		responseDto.setAccNo(123L);
-		responseDto.setUserName(user.getEmail());
+		responseDto.setEmail(user.getEmail());
 		responseDto.setMessage("User registration done successfully");
 		
 		ResponseDto actualValue = userLoginService.userLogin(loginDto);
@@ -183,7 +183,7 @@ public class UserLoginServiceImplTest {
 
 		ResponseDto responseDto=new ResponseDto();
 		responseDto.setAccNo(123L);
-		responseDto.setUserName(user.getEmail());
+		responseDto.setEmail(user.getEmail());
 		responseDto.setMessage("User registration done successfully");
 		
 

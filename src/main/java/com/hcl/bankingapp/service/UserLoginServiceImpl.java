@@ -34,17 +34,17 @@ public class UserLoginServiceImpl implements UserLoginService {
 	@Override
 	public ResponseDto userLogin(LoginDto loginDto) {
 		
-		logger.info("LoginData:"+loginDto.getUserName()+"Password:"+loginDto.getPassword());
+		logger.info("LoginData:"+loginDto.getEmail()+"Password:"+loginDto.getPassword());
 
 		
 		List<Account> accountlist = null;
 		Account account = null;
 		Long userId = 0L;
 		
-		String userName= loginDto.getUserName();
+		String userName= loginDto.getEmail();
 		String password=loginDto.getPassword();
 
-		UserDetails userDetails = userDetailsRepository.findByUserName(userName);
+		UserDetails userDetails = userDetailsRepository.findByEmail(userName);
 
 		if (userDetails != null) {
 
@@ -58,6 +58,7 @@ public class UserLoginServiceImpl implements UserLoginService {
 				responseDto.setAccNo(account.getAccountNo());
 				responseDto.setMessage("user Login Succesfully");
 				responseDto.setEmail(userName);
+				responseDto.setUserId(userId);
 				
 				return responseDto;
 				

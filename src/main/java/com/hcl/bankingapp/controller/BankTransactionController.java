@@ -57,7 +57,7 @@ public class BankTransactionController {
 		return new ResponseEntity<>(success, HttpStatus.OK);
 	}
 
-	@PostMapping("/save") 
+	@PostMapping("/register") 
 	public UserResponseDTO saveCustomer(@RequestBody UserDetailsDTO userDetailsDTO) {
 		
 		

@@ -31,7 +31,7 @@ public class RegistrationService {
 		
 		BeanUtils.copyProperties(userDetailsDTO, details);
 		
-		UserDetails users = userdetailsrepository.findByUserName(details.getEmail());
+		UserDetails users = userdetailsrepository.findByEmail(details.getEmail());
 		if (users != null)
 			throw new BankException(details.getEmail() + " already existed");
 
